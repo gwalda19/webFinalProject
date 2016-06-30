@@ -23,7 +23,7 @@ en:
 
   layouts:
     application:
-      title_html:          "BuzzFeed"
+      title_html:          "FuzzBeed"
       home:                "Home"
       login_html:          "Login"
       createUser:          "Create User"
