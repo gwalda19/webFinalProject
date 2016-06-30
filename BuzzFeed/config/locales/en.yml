@@ -25,6 +25,8 @@ en:
     application:
       title_html:          "BuzzFeed"
       home:                "Home"
+      login_html:          "Login"
+      createUser:          "Create User"
 
 
   home:
