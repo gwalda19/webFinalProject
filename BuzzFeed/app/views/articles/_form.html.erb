@@ -23,7 +23,10 @@
     <%= f.label :image_url %><br>
     <%= f.text_field :image_url %>
   </div>
-  <div class="actions">
+   <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :value => @user.name, :readonly => true %>
+  </div> <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>

@@ -20,4 +20,17 @@ Article.create!(
          Facebook Live shows Ralph going digital, standing with sidekick Vanellope over 
          billboards parodying Google and Amazon.</p>",
   image_url: "wreck-it-ralph.jpg",
-  id: 1 )
+  name: "booye" )
+  
+Article.create!( 
+  title: "<i>Philippe Cousteau Discovers Sharks off Islands Formerly Used for Nuclear Testing</i>",
+  body: "<p>When Philippe Cousteau and his wife Ashlan Gorse set off to explore The Marshall Islands,
+            they had no idea what they would find. <br> An area once used for nuclear testing during 
+            the Cold War, Gorse tells PEOPLE: <i>\"We actually detonated over 60 nuclear bombs around 
+            these islands, and we completely destroyed the ecosystem, pretty much any living creature 
+            in the area.\"</i> <br> Having heard that sharks had returned and were flourishing in the 
+            area despite the devastation, the couple set off to investigate for their Discovery Channel 
+            Nuclear Sharks show. <br><i>\"It was just a wonderful thing for the two of us because it was 
+            our first real expedition, we were leading it together,\"</i> says Cousteau.</p>",
+  image_url: "sharkweek.jpg",
+  name: "david" )
