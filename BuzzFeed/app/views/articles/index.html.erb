@@ -17,6 +17,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.title %></td>
+        <td><%= article.byline %></td>
         <td><%= article.body %></td>
         <td><%= article.image_url %></td>
         <td><%= link_to 'Show', article %></td>

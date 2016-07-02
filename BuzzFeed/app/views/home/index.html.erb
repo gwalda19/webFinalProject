@@ -8,9 +8,12 @@
   <% @articles.each do |article| %>
     <% cache ['entry', article] do %>
       <div class="entry">
+      	<br>
         <%= image_tag(article.image_url) %>
-        <h3><%= sanitize(article.title) %></h3>
-        <%= sanitize(article.body) %>
+        <h2><%= sanitize(article.title) %></h2>
+        <%= sanitize(article.byline) %>
+        <%= sanitize(article.name) %>
+        <br>
       </div>
     <% end %>
   <% end %>

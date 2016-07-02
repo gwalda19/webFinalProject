@@ -16,6 +16,10 @@
     <%= f.text_field :title, cols: 100 %>
   </div>
   <div class="field">
+    <%= f.label :byline %><br>
+    <%= f.text_field :byline, cols: 100 %>
+  </div>
+  <div class="field">
     <%= f.label :body %><br>
     <%= f.text_area :body, rows: 30, cols: 100 %>
   </div>
@@ -26,7 +30,11 @@
    <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name, :value => @user.name, :readonly => true %>
-  </div> <div class="actions">
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category, cols: 100 %>
+  </div><div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
