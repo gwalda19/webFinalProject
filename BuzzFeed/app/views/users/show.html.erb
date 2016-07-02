@@ -1,9 +1,25 @@
+<% if notice %>
 <p id="notice"><%= notice %></p>
+<% end %>
 
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% cache ['users', Article.latest] do %>
+  <% @articles.each do |article| %>
+    <% cache ['entry', article] do %>
+      <div class="entry">
+        <%= image_tag(article.image_url) %>
+        <h3><%= sanitize(article.title) %></h3>
+        <%= sanitize(article.body) %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+
+
+<%= link_to 'Change Username/Password', edit_user_path(@user) %>

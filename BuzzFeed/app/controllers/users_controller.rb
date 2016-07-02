@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  skip_before_action :authorize
+  skip_before_action :authorize, only: :new
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_user
 
   # GET /users
   # GET /users.json
@@ -11,6 +12,16 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    #Don't allow users into others pages.
+    raise ActiveRecord::RecordNotFound if session[:user_id] != @user.id
+    
+    userArticle = []
+      
+    Article.order("created_at DESC").where(name: @user.name).find_each do |article|
+      userArticle.push(article)
+    end
+    
+    @articles = userArticle
   end
 
   # GET /users/new
@@ -76,5 +87,10 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :password, :password_confirmation)
+    end
+
+    def invalid_user
+      logger.error "Attempt to access invalid user #{params[:id]}"
+      redirect_to home_url, notice: 'Invalid user'
     end
 end
