@@ -4,5 +4,14 @@
 
 <h1><%= t('.title_html') %></h1>
 
-<p> This is the home page for our buzzfeed project. <br>
-    Place articles here. </p>
+<% cache ['home', Article.latest] do %>
+  <% @articles.each do |article| %>
+    <% cache ['entry', article] do %>
+      <div class="entry">
+        <%= image_tag(article.image_url) %>
+        <h3><%= sanitize(article.title) %></h3>
+        <%= sanitize(article.body) %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
