@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @user = User.find_by(id: session[:user_id])
   end
 
   # GET /articles/1/edit
