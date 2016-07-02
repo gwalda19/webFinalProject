@@ -9,12 +9,12 @@
 
 <body class="<%= controller.controller_name %>" >
   <div id="banner">
-    <%= image_tag("logo.png") %>
+    <%= image_tag("logo.png", :size => "44x44") %>
     <%= @page_title || t('.title_html') %>
   </div>
 
   <div id="columns">
-    <div id="side">
+    <div id="leftside">
       <ul>
         <li><%= link_to t('.home'), home_url %></li>
 
@@ -35,6 +35,8 @@
     <div id="main">
       <%= yield %>
     </div>
+  <div id="rightside">
+  	<br><br><br>
   </div>
 </body>
 </html>
