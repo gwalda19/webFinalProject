@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     
     userArticle = []
       
-    Article.order("created_at DESC").where(name: @user.name).find_each do |article|
+    Article.where(name: @user.name).order("created_at DESC").each do |article|
       userArticle.push(article)
     end
     
