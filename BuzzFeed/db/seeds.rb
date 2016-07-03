@@ -22,6 +22,7 @@ Article.create!(
          billboards parodying Google and Amazon.</p>",
   image_url: "wreck-it-ralph.jpg",
   category: "movies",
+  category2: "games",
   name: "<p>booye" )
   
 Article.create!( 
@@ -37,4 +38,5 @@ Article.create!(
             our first real expedition, we were leading it together,\"</i> says Cousteau.</p>",
   image_url: "sharkweek.jpg",
   category: "science",
+  category2: "",
   name: "<p>david" )

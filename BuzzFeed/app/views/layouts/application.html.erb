@@ -9,30 +9,29 @@
 
 <body class="<%= controller.controller_name %>" >
   <div id="banner">
-    <%= image_tag("logo.png", :size => "44x44") %>
     <%= @page_title || t('.title_html') %>
-  </div>
-
-  <div id="columns">
-    <div id="leftside">
-      <ul>
-        <li><%= link_to t('.home'), home_url %></li>
-
-        <% if session[:user_id] == nil %>
-          <li><%= link_to t('.login_html'), login_path %></li>
-          <li><%= link_to t('.createUser'), new_user_path %></li>
-        <% end %>
-      </ul>
-
-      <% if session[:user_id] %>
-        <ul>
-          <li><%= link_to 'Users',          users_path    %></li>
-          <li><%= link_to "Settings",       user_path(session[:user_id]) %></li>
-          <li><%= link_to "Create Article", new_article_path %></li>
-        </ul>
-        <%= button_to 'Logout', logout_path, method: :delete %>
+    <%= image_tag("BuzzFeedLogo.png", :size => "70x70") %>
+    <%= image_tag("ScienceButton.jpg", :size => "70x70") %>
+    <%= image_tag("VGButton.jpg", :size => "70x70") %>
+    <%= image_tag("MoviesButton.jpg", :size => "70x70") %>
+    <%= image_tag("MusicButton.jpg", :size => "70x70") %>
+   </div>
+  <div id="banner2">
+<%= link_to t('.home'), home_url %>
+      <% if session[:user_id] == nil %>
+        <%= link_to t('.login_html'), login_path %>
+        <%= link_to t('.createUser'), new_user_path %>
       <% end %>
 
+      <% if session[:user_id] %>
+          <%= link_to 'Users',          users_path    %></li>
+          <%= link_to "Settings",       user_path(session[:user_id]) %>
+          <%= link_to "Create Article", new_article_path %>
+        <%= button_to 'Logout', logout_path, method: :delete %>
+      <% end %>
+  </div>	
+  <div id="columns">
+    <div id="leftside">
     </div>
     <div id="main">
       <%= yield %>
