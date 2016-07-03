@@ -27,7 +27,7 @@ Article.create!(
   
 Article.create!( 
   title:  "<i>Philippe Cousteau Discovers Sharks off Islands Formerly Used for Nuclear Testing</i>",
-  byline: "<p><b>When Philippe Cousteau and his wife Ashlan Gorse set off to explore The Marshall Islands,
+  byline: "<b>When Philippe Cousteau and his wife Ashlan Gorse set off to explore The Marshall Islands,
             they had no idea what they would find!</b>",
   body: "<p><br> An area once used for nuclear testing during 
             the Cold War, Gorse tells PEOPLE: <i>\"We actually detonated over 60 nuclear bombs around 
