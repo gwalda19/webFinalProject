@@ -17,7 +17,7 @@
     <%= image_tag("MusicButton.jpg", :size => "70x70") %>
    </div>
   <div id="banner2">
-<%= link_to t('.home'), home_url %>
+    <%= link_to t('.home'), home_url %>
       <% if session[:user_id] == nil %>
         <%= link_to t('.login_html'), login_path %>
         <%= link_to t('.createUser'), new_user_path %>
