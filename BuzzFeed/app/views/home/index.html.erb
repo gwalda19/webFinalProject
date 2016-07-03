@@ -11,8 +11,8 @@
       	<br>
         <%= image_tag(article.image_url) %>
         <h2><%= sanitize(article.title) %></h2>
-        <%= sanitize(article.byline) %>
-        <%= sanitize(article.name) %>
+        <p><%= sanitize(article.byline) %></p>
+        <p><%= sanitize(article.name) %></p>
         <br>
       </div>
     <% end %>
