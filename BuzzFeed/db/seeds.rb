@@ -8,8 +8,8 @@
 
 Article.delete_all
 Article.create!( 
-  title: "<i>Wreck-It Ralph 2 officially announced at Disney</i>",
-  byline:"<p><b>He’s gonna wreck it! Again!</b>",
+  title:  "<i>Wreck-It Ralph 2 officially announced at Disney</i>",
+  byline: "<p><b>He’s gonna wreck it! Again!</b>",
   body: "<p>
          Disney announced Thursday that a sequel to its 2012 film Wreck-It Ralph is officially in
          development over at the studio’s animation arm, slated for release on March 9, 2018.
@@ -21,12 +21,12 @@ Article.create!(
          Facebook Live shows Ralph going digital, standing with sidekick Vanellope over 
          billboards parodying Google and Amazon.</p>",
   image_url: "wreck-it-ralph.jpg",
-  category: "movies",
+  category:  "movies",
   name: "<p>booye" )
   
 Article.create!( 
-  title: "<i>Philippe Cousteau Discovers Sharks off Islands Formerly Used for Nuclear Testing</i>",
-  byline:"<p><b>When Philippe Cousteau and his wife Ashlan Gorse set off to explore The Marshall Islands,
+  title:  "<i>Philippe Cousteau Discovers Sharks off Islands Formerly Used for Nuclear Testing</i>",
+  byline: "<p><b>When Philippe Cousteau and his wife Ashlan Gorse set off to explore The Marshall Islands,
             they had no idea what they would find!</b>",
   body: "<p><br> An area once used for nuclear testing during 
             the Cold War, Gorse tells PEOPLE: <i>\"We actually detonated over 60 nuclear bombs around 
@@ -36,5 +36,5 @@ Article.create!(
             Nuclear Sharks show. <br><i>\"It was just a wonderful thing for the two of us because it was 
             our first real expedition, we were leading it together,\"</i> says Cousteau.</p>",
   image_url: "sharkweek.jpg",
-  category: "science",
+  category:  "science",
   name: "<p>david" )
