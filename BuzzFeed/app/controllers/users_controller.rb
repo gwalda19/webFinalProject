@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :authorize, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :verify_admin, only: [:index, :new]
+  before_action :verify_admin, only: [:index]
   before_action :check_user, only: [:show, :edit, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_user
 
@@ -25,6 +25,12 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    if session[:user_id] != nil
+      if not (User.find_by(id: session[:user_id])).name.match(/^admin_/)
+        redirect_to home_url, notice: "Page Not Found!"
+      end
+    end
+
     @user = User.new
   end
 
