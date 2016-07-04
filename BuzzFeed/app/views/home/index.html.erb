@@ -9,8 +9,8 @@
     <% cache ['entry', article] do %>
       <div class="entry">
       	<br>
-        <%= image_tag(article.image_url) %>
-        <h2><%= sanitize(article.title) %></h2>
+        <%= link_to image_tag(article.image_url), article_path(article.id) %>
+        <h2><%= link_to sanitize(article.title), article_path(article.id) %></h2>
         <p><%= sanitize(article.byline) %></p>
         <p><%= sanitize(article.name) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            <i>Categories: <%= sanitize(article.category) %> <%= sanitize(article.category2) %></i></p>
