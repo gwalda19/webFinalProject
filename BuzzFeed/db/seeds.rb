@@ -38,5 +38,4 @@ Article.create!(
             our first real expedition, we were leading it together,\"</i> says Cousteau.</p>",
   image_url: "sharkweek.jpg",
   category: "science",
-  category2: "",
   name: "david" )
