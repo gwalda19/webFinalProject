@@ -39,3 +39,49 @@ Article.create!(
   image_url: "sharkweek.jpg",
   category: "science",
   name: "david" )
+  
+Article.create!( 
+  title:  "<i>How To Find The Story Mode In Street Fighter 5; Patch 1.04 Is Now Live</i>",
+  byline: "<b>Unlike other free content, the story mode in Street Fighter 5 is not included
+              automatically in update patch 1.04. Here is a few tips for those that are 
+              wondering where it is.</b>",
+  body: "<p>The SFV Server Twitter page announced: \“You can find the SFV \“General Story\”
+            DLC in the \“New Add-On > All\” section of the PSN store. You need the DLC and 
+            1.04 patch to play. Thanks\”
+            <br>
+            Before you find the story mode, you have to install update patch 1.04 which is 
+            available now. The update is quite large as the story mode is close to 8GB in size.
+            If you have slow internet, it’s best to download it while you are sleeping or 
+            at work/school. That way, you can wake up or come back home with everything installed.
+            <br>
+            Aside from the story mode, the likes of Balrog and Ibuki are now available for 
+            purchase on the game’s store. Several other new characters are playable in the Story
+            mode, but they won’t be available fully until later this year.
+            <br>
+            The SFV Server page also tweeted this about costumes: \“[CAUTION] When purchasing 
+            Balrog\’s \“Battle Costume\” on PSN it shows an image of his \“Story Costume\” and vice 
+            versa. Sorry for the mix up.\” Make note of this if you are going to buy his costumes
+            in Street Fighter 5 today.</p>",
+  image_url: "street_fighter.jpg",
+  category: "games",
+  name: "david" )  
+  
+Article.create!( 
+  title:  "<i>Overwatch: Score with a basketball and confetti shoots out of the hoop, thanks to recent patch</i>",
+  byline: "<b>Overwatch and basketball... What?!?!?</b>",
+  body: "<p>There\’s a moment in the pre-game section of Overwatch on certain maps in certain game types
+            that puts players on a ship with access to a few basketballs and a hoop. Since the beta, 
+            folks have been punching and shooting these balls randomly, sometimes with the success of 
+            actually scoring.
+            <br>
+            Previously, nothing happened when the ball went through the hoop. Some folks would capture
+            the glory, share online and move on. Now? The latest Overwatch patch quietly added confetti 
+            and an airhorn to making a basket.
+            <br>
+            The video at the head of this post comes from a recent stream by AnneMunition, a broadcaster 
+            highlighted by Blizzard for her play. Excuse the language.</p>",
+  image_url: "overwatch.jpg",
+  category: "games",
+  name: "david" )
+  
+  
