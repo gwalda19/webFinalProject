@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   skip_before_action :authorize, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :verify_admin, only: [:index, :new]
+  before_action :check_user, only: [:show, :edit, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_user
 
   # GET /users
@@ -12,9 +14,6 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    #Don't allow users into others pages.
-    raise ActiveRecord::RecordNotFound if session[:user_id] != @user.id
-    
     userArticle = []
       
     Article.where(name: @user.name).order("created_at DESC").each do |article|
@@ -68,12 +67,16 @@ class UsersController < ApplicationController
   def destroy
     begin
       @user.destroy
+      tmp_user = User.find_by(id: session[:user_id])
+      if not tmp_user.name.match(/^admin_/)
+        session[:user_id] = nil
+      end
       flash[:notice] = "User #{@user.name} deleted"
     rescue StandardError => e
       flash[:notice] = e.message
     end
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to home_url }
       format.json { head :no_content }
     end
   end
@@ -89,8 +92,17 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :password, :password_confirmation)
     end
 
+    def check_user
+      tmp_user = User.find_by(id: session[:user_id])
+      if not tmp_user.name.match(/^admin_/)
+        if session[:user_id] != @user.id
+          redirect_to home_url, notice: "Page Not Found!"
+        end
+      end
+    end
+
     def invalid_user
       logger.error "Attempt to access invalid user #{params[:id]}"
-      redirect_to home_url, notice: 'Invalid user'
+      redirect_to home_url, notice: "Page Not Found!"
     end
 end
