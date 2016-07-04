@@ -73,17 +73,19 @@ class UsersController < ApplicationController
   def destroy
     begin
       @user.destroy
-      tmp_user = User.find_by(id: session[:user_id])
-      if not tmp_user.name.match(/^admin_/)
-        session[:user_id] = nil
-      end
       flash[:notice] = "User #{@user.name} deleted"
     rescue StandardError => e
       flash[:notice] = e.message
     end
     respond_to do |format|
-      format.html { redirect_to home_url }
-      format.json { head :no_content }
+      if (User.find_by(id: session[:user_id])) == nil
+        session[:user_id] = nil
+        format.html { redirect_to home_url }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to users_url }
+        format.json { head :no_content }
+      end
     end
   end
 
