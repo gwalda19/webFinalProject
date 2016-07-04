@@ -150,3 +150,15 @@ Article.create!(
   image_url: "dory.jpg",
   category: "movies",
   name: "booye" )
+
+User.delete_all
+User.create!(
+  name:                  "admin_david",
+  password:              "macy",
+  password_confirmation: "macy" )
+  
+User.create!(
+  name:                  "admin_booye",
+  password:              "ico",
+  password_confirmation: "ico" )
+
