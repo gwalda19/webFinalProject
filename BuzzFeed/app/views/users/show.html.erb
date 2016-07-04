@@ -3,7 +3,7 @@
 <% end %>
 
 <p>
-  <strong>Name:</strong>
+  <strong>User Name:</strong>
   <%= @user.name %>
 </p>
 
@@ -14,6 +14,7 @@
         <%= image_tag(article.image_url) %>
         <h3><%= sanitize(article.title) %></h3>
         <p><%= sanitize(article.byline) %></p>
+        <%= link_to 'Delete Article', article, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
   <% end %>

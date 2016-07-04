@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :verify_admin, only: :index
+  before_action :set_user, only: [:new, :create, :edit, :update]
+  before_action :check_user, only: [:show, :edit, :update]
 
   # GET /articles
   # GET /articles.json
@@ -15,7 +18,6 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-    @user = User.find_by(id: session[:user_id])
   end
 
   # GET /articles/1/edit
@@ -57,8 +59,13 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
-      format.json { head :no_content }
+      if (User.find_by(id: session[:user_id])).name.match(/^admin_/)
+        format.html { redirect_to articles_url, notice: "Article was successfully deleted." }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to user_path(session[:user_id]), notice: "Article was successfully deleted." }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -68,6 +75,23 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
+    def set_user
+      begin
+        @username = (Article.find(params[:id])).name
+      rescue StandardError => e
+        @username = (User.find_by(id: session[:user_id])).name
+      end
+    end
+
+    def check_user
+      tmp_user = User.find_by(id: session[:user_id])
+      if not tmp_user.name.match(/^admin_/)
+        if (Article.find(params[:id])).name != tmp_user.name
+          redirect_to home_url, notice: "Page Not Found!"
+        end
+      end
+    end
+      
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:title, :byline, :body, :image_url, :category, :category2, :name)
