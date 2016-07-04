@@ -82,6 +82,71 @@ Article.create!(
             highlighted by Blizzard for her play. Excuse the language.</p>",
   image_url: "overwatch.jpg",
   category: "games",
+  name: "booye" )
+  
+Article.create!( 
+  title:  "<i>Great white shark tagged with camera to unveil mysterious winter behavior</i>",
+  byline: "<b>Great white shark + camera = awesome!!</b>",
+  body: "<p>No one knows what great white sharks do in deep, deserted part of the Pacific Ocean
+            during winters. To find out the same, some researchers tagged sharks with camera
+            that can record a 10 hour long video.
+            <br>
+            The great white sharks often found roaming and feeding along the coastline from 
+            Central to Baja California go into great depth, about 3000–5000 meters deep into 
+            the Pacific Ocean. It takes them 30 to 40 days to reach a point approximately halfway 
+            between Mexico and Hawaii. They stay at this point from about April to July. This
+            is an area smaller than Panama.
+            <br>
+            From that point, they start diving up to 200 meters, repeatedly, up to 150 times 
+            a day, when males arrive. The sharks are as massive as 22 feet. However, this is 
+            not known what exactly they do deep down there. Salvador Jorgensen, a scientist 
+            with the Monterey Bay Aquarium, was one of several researchers to first identify 
+            this mysterious region in 2009. Since then, he started calling the area 
+            \‘white shark café\’ as he assumes that sharks probably travel to this point for
+            something to eat.</p>",
+  image_url: "greatWhiteShark.jpg",
+  category: "science",
   name: "david" )
-  
-  
+
+Article.create!( 
+  title:  "<i>Jimmy Buffett vs. Kenny Chesney: Who is the country/island king?</i>",
+  byline: "<b>Margaritaville  V. No Shoes, No Shirt, No Problem</b>",
+  body: "<p>Jimmy Buffett and Kenny Chesney: One is a wildly successful Southern-born 
+            singer who made a fortune dipping his toes in the currents between modern 
+            country and island music, and the other is… well, you see where we’re going
+            with this. Together, the sun-splashed road warriors are responsible for
+            basically every radio-country song that mentions sand, which is now something 
+            like 83% of them. To the uninitiated wandering around lawns filled with coolers 
+            and people in coconut bras who shouldn’t be in coconut bras (YOU GUYS KNOW WHO YOU ARE),
+            it may seem like they’re cut from the same cloth. But there are subtle differences.
+            <br>
+            Both will make a return to the Klipsch Music Center in the next few weeks, after
+            years of Chesney rolling into Lucas Oil Stadium and Buffett taking a rare
+            summer off last year. (Sounds like there are more of those to come — Buffett 
+            told the Houston Chronicle he’d be dialing back his touring after this year. The 
+            man doesn’t exactly scream \“I need retirement,\” but he’ll be 70 on Christmas Day.)
+            So in advance of their June 23 and 30 shows this year, a quick island map to their 
+            similarities and differences: </p>",
+  image_url: "jimmyKenny.jpg",
+  category: "music",
+  name: "david" )
+
+Article.create!( 
+  title:  "<i>\'Dory\' three-peats at No. 1 with $50.2M for four-day weekend</i>",
+  byline: "<b>Is PIXAR back on top???</b>",
+  body: "<p>Finding Dory continued to make fireworks for the Fourth of July weekend.
+         <br> 
+         Disney and Pixar\’s buoyant animated sequel paddled to the top of the box 
+         office for a third straight week, clinching No. 1 with $50.2 million for the 
+         four-day holiday weekend and a whopping $380.5 million to date in the USA, 
+         according to studio estimates from tracking firm comScore.
+         <br>
+         The well-reviewed follow-up, which brings back Ellen DeGeneres as forgetful 
+         regal blue tang fish Dory, has now amassed $538.2 million globally. It has 
+         already outpaced its predecessor Finding Nemo, which reeled in $191.5 million
+         its first three weeks in 2003 on its way to $339.7 million total. Dory is now 
+         the second highest-grossing film of the year so far (just behind 
+         Captain America: Civil War, which muscled to $405.6 million).</p>",
+  image_url: "dory.jpg",
+  category: "movies",
+  name: "booye" )
