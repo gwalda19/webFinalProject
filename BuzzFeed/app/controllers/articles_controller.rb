@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :verify_admin, only: :index
+  before_action :set_user, only: [:new, :create, :edit, :update]
 
   # GET /articles
   # GET /articles.json
@@ -15,7 +17,6 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-    @user = User.find_by(id: session[:user_id])
   end
 
   # GET /articles/1/edit
@@ -68,6 +69,14 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
+    def set_user
+      begin
+        @username = (Article.find(params[:id])).name
+      rescue StandardError => e
+        @username = (User.find_by(id: session[:user_id])).name
+      end
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:title, :byline, :body, :image_url, :category, :category2, :name)
