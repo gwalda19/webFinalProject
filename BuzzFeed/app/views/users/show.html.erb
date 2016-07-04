@@ -13,13 +13,13 @@
       <div class="entry">
         <%= image_tag(article.image_url) %>
         <h3><%= sanitize(article.title) %></h3>
-        <%= sanitize(article.body) %>
+        <p><%= sanitize(article.byline) %></p>
       </div>
     <% end %>
   <% end %>
 <% end %>
 
-
-
-
+<br>
 <%= link_to 'Change Username/Password', edit_user_path(@user) %>
+<br>
+<%= link_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
