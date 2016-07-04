@@ -1,8 +1,9 @@
 class ArticlesController < ApplicationController
+  skip_before_action :authorize, only: :show
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :verify_admin, only: :index
   before_action :set_user, only: [:new, :create, :edit, :update]
-  before_action :check_user, only: [:show, :edit, :update]
+  before_action :check_user, only: [:edit, :update]
 
   # GET /articles
   # GET /articles.json
