@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
   resources :articles
-  get 'admin'   => 'admin#index'
-  get 'games'   => 'games_feed#index', as: :games
-  get 'music'   => 'music_feed#index', as: :music
-  get 'movies'  => 'movies_feed#index', as: :movies
-  get 'science' => 'science_feed#index', as: :science
+  get 'admin'    => 'admin#index'
+  get 'games'    => 'games_feed#index', as: :games
+  get 'music'    => 'music_feed#index', as: :music
+  get 'movies'   => 'movies_feed#index', as: :movies
+  get 'science'  => 'science_feed#index', as: :science
+  get 'trending' => 'trending_feed#index', as: :trending
 
   controller :sessions do
     get    'login'  => :new

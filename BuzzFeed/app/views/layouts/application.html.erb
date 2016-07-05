@@ -10,7 +10,7 @@
 <body class="<%= controller.controller_name %>" >
   <div id="banner">
     <%= @page_title || t('.title_html') %>
-    <%= link_to(image_tag("BuzzFeedLogo.png", :size => "70x70"), "http://hasthelargehadroncolliderdestroyedtheworldyet.com/") %>
+    <%= link_to(image_tag("BuzzFeedLogo.png", :size => "70x70"), trending_path) %>
     <%= link_to(image_tag("ScienceButton.jpg", :size => "70x70"), science_path) %>
     <%= link_to(image_tag("VGButton.jpg", :size => "70x70"), games_path) %>
     <%= link_to(image_tag("MoviesButton.jpg", :size => "70x70"), movies_path) %>
