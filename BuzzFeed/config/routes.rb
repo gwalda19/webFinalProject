@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+
   resources :articles
   get 'admin' => 'admin#index'
-  
+  get 'music' => 'music_feed#index', as: :music
+
   controller :sessions do
     get    'login'  => :new
     post   'login'  => :create
