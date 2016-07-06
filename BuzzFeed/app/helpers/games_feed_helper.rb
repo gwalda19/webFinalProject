@@ -1,0 +1,2 @@
+module GamesFeedHelper
+end

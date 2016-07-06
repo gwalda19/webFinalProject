@@ -2,13 +2,13 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1><%= t('.title_html') %></h1>
+<h1><%= "Newest Stories Across All Categories!" %></h1>
 
 <% cache ['home', Article.latest] do %>
   <% @articles.each do |article| %>
     <% cache ['entry', article] do %>
       <div class="entry">
-      	<br>
+        <br>
         <%= link_to image_tag(article.image_url), article_path(article.id) %>
         <h2><i><%= link_to sanitize(article.title), article_path(article.id) %></i></h2>
         <p><b><%= sanitize(article.byline) %></b></p>

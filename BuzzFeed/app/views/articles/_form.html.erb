@@ -27,14 +27,19 @@
     <%= f.label :image_url %><br>
     <%= f.text_field :image_url %>
   </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category, cols: 100 %>
+  </div>
+  <div class="field">
+    <%= f.label "Category 2" %><br>
+    <%= f.text_field :category2, cols: 100 %>
+  </div>
    <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name, :value => @username, :readonly => true %>
   </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category, cols: 100 %>
-  </div><div class="actions">
+  <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>

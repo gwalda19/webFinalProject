@@ -1,24 +1,26 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<center>
+  <%= image_tag(@article.image_url, :size => "640x480") %>
 
 <p>
-  <strong>Title:</strong>
-  <%= @article.title %>
+  <strong><h2>
+  <%= sanitize(@article.title) %>
+  </h2></strong>
 </p>
 
 <p>
-  <strong>Byline:</strong>
-  <%= @article.byline %>
+  <strong><h3>
+  <i><%= sanitize(@article.byline) %></i>
+  </h3></strong>
 </p>
+
+</center>
 
 <p>
-  <strong>Body:</strong>
-  <%= @article.body %>
+  <b> <%= sanitize(@article.body) %></b>
 </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @article.image_url %>
-</p>
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Back', trending_path %>
