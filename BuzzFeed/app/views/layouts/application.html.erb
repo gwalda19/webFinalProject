@@ -11,7 +11,7 @@
 	
   <div id="bannerwrapper">	
     <div id="banner0"> 	
-      <%= link_to(image_tag("BuzzFeedText.png", :size => "280x70"), trending_path) %>	
+      <%= link_to(image_tag("BuzzFeedText.png", :size => "280x70"), home_url) %>	
     </div>
     <div id="banner">
       <%= link_to(image_tag("BuzzFeedLogo.png", :size => "70x70"), trending_path) %>
@@ -22,7 +22,6 @@
     </div>
   </div> 
   <div id="banner2">
-    <%= link_to t('.home'), home_url %>
     <% if session[:user_id] == nil %>
       <%= link_to t('.login_html'), login_path %>
       <%= link_to t('.createUser'), new_user_path %>
