@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1><%= "Newest Stories Across All Categories!" %></h1>
+<h1><%= "Trending Articles" %></h1>
 
 <% cache ['home', Article.latest] do %>
   <% @articles.each do |article| %>
