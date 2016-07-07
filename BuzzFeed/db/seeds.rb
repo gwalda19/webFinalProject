@@ -196,11 +196,17 @@ Article.create!(
 
 User.delete_all
 User.create!(
-  name:                  "admin_david",
+  name:                  "david",
   password:              "macy",
   password_confirmation: "macy" )
   
 User.create!(
-  name:                  "admin_booye",
+  name:                  "booye",
   password:              "ico",
   password_confirmation: "ico" )
+  
+User.create!(
+  name:                  "admin_patrick",
+  password:              "mckee",
+  password_confirmation: "mckee" )
+  

@@ -12,7 +12,7 @@
     <% cache ['entry', article] do %>
       <div class="entry">
         <%= image_tag(article.image_url) %>
-        <h3><%= sanitize(article.title) %></h3>
+        <h3><i><%= link_to sanitize(article.title), article_path(article.id) %></i></h3>
         <p><%= sanitize(article.byline) %></p>
         <%= link_to 'Delete Article', article, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
