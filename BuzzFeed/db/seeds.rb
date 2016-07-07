@@ -40,6 +40,7 @@ Article.create!(
             our first real expedition, we were leading it together,\" says Cousteau.",
   image_url: "sharkweek.jpg",
   category: "science",
+  category2: "",
   name: "david" )
   
 Article.create!( 
@@ -69,6 +70,7 @@ Article.create!(
             in Street Fighter 5 today.\"",
   image_url: "street_fighter.jpg",
   category: "games",
+  category2: "",
   name: "david" )  
   
 Article.create!( 
@@ -89,6 +91,7 @@ Article.create!(
             highlighted by Blizzard for her play. Excuse the language.",
   image_url: "overwatch.jpg",
   category: "games",
+  category2: "",
   name: "booye" )
   
 Article.create!( 
@@ -115,6 +118,7 @@ Article.create!(
             something to eat.",
   image_url: "greatWhiteShark.jpg",
   category: "science",
+  category2: "",
   name: "david" )
 
 Article.create!( 
@@ -137,6 +141,7 @@ Article.create!(
             man doesn’t exactly scream \“I need retirement,\” but he’ll be 70 on Christmas Day.)",
   image_url: "jimmyKenny.jpg",
   category: "music",
+  category2: "",
   name: "david" )
 
 Article.create!( 
@@ -186,6 +191,7 @@ Article.create!(
          Captain America: Civil War, which muscled to $405.6 million).",
   image_url: "dory.jpg",
   category: "movies",
+  category2: "",
   name: "booye" )
 
 User.delete_all
