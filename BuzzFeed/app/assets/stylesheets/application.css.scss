@@ -14,12 +14,29 @@
  *= require_tree .
  */
 
+#bannerwrapper {
+    background: #FFFF00;
+    overflow: auto;
+
+}
+
+#banner0 {
+  background: #FFFF00;
+  color: #FF0000;
+  width: 50%;
+  float:left;
+
+  img {
+    float: left;
+    
+  }
+}
+
 #banner {
   background: #FFFF00;
-  padding: 20px;
-  font: small-caps 70px/70px "Impact", serif;
   color: #FF0000;
-  text-align: left;
+  width: 50%;
+  float:right;
 
   img {
     float: right;
